@@ -8,4 +8,6 @@
   <% Title.all.each do |title| %>
     <input name="figure[title_ids][]" type="checkbox" value="title.id" id="title.id">
   <%end%>
+  <label>Create New Title:</label>
+    <input type="text" name="title[name]">
 </form>
