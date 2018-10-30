@@ -31,4 +31,6 @@ class FiguresController < ApplicationController
     erb :'figures/edit'
   end
 
+  patch '/figures/:id'
+
 end
