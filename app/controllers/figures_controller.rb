@@ -36,13 +36,18 @@ class FiguresController < ApplicationController
     if !params[:figure].keys.include?("title_ids")
     params[:figure]["title_ids"] = []
     end
+    if !params[:figure].keys.include?("landmarks_ids")
+    params[:figure]["landmarks_ids"] = []
+    end
     #######
 
-    @owner.update(params["owner"])
-    if !params["pet"]["name"].empty?
-      @owner.pets << Pet.create(name: params["pet"]["name"])
+    if !params["title"]["name"].empty?
+      @figure.titles << Title.create(name: params["title"]["name"])
     end
-    redirect "/owners/#{@owner.id}"
+    if !params["landmark"]["name"].empty?
+      @figure.landmarks << Landmark.create(name: params["landmark"]["name"])
+    end
+    redirect "/figures/#{figure.id}"
   end
 
 end
