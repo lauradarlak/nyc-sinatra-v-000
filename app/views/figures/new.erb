@@ -3,7 +3,7 @@
 <form method="POST" action="/figure">
   <label>Name</label>
   <input name="figure[name]" type="text" id="figure_name">
-
+  <br></br>
   <label>Titles</label>
   <% Title.all.each do |title| %>
     <input name="figure[title_ids][]" type="checkbox" value="<%=title.id%>" id="title_<%=title.id%>"><%=title.name%></input>
