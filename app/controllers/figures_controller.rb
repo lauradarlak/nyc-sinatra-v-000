@@ -32,14 +32,6 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
-    ####### bug fix
-    # if !params[:figure].keys.include?("title_ids")
-    # params[:figure]["title_ids"] = []
-    # end
-    # if !params[:figure].keys.include?("landmarks_ids")
-    # params[:figure]["landmarks_ids"] = []
-    # end
-    #######
     @figure = Figure.find(params[:id])
     @figure.update(params[:figure])
     if !params["title"]["name"].empty?
