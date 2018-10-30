@@ -4,8 +4,8 @@
   <label>Name</label>
   <input name="figure[name]" type="text" id="figure_name">
 
-  <label>Landmark</label>
-  <% Landmarks.all.each do |landmark| %>
-    <input name="figure[landmark_id]" type="checkbox" id="figure_name">
+  <label>Titles</label>
+  <% Title.all.each do |title| %>
+    <input name="figure[title_ids][]" type="checkbox" value="title.id" id="title.id">
   <%end%>
 </form>
